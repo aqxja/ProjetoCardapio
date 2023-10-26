@@ -18,7 +18,6 @@ namespace ProjetoCardapio.Models
         public Salas Salas { get; set;}
 
 
-
         [Column("QuantidadeAlunos")]
         [Display(Name = "Quantidade de Alunos")]
 

@@ -6,11 +6,11 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
-/*builder.Services.AddDbContext<Contexto> //Aquiles
-    (options => options.UseSqlServer("Data Source=SB-1490656\\SQLSENAI;Initial Catalog = ProjetoCardapio;Integrated Security = True;TrustServerCertificate = True"));*/
+builder.Services.AddDbContext<Contexto> //Aquiles
+    (options => options.UseSqlServer("Data Source=SB-1490656\\SQLSENAI;Initial Catalog = ProjetoCardapio;Integrated Security = True;TrustServerCertificate = True"));
 
-builder.Services.AddDbContext<Contexto> //Vinicius
-    (options => options.UseSqlServer("Data Source=SB-1490629\\SQLSENAI;Initial Catalog = ProjetoCardapio;Integrated Security = True;TrustServerCertificate = True"));
+/*builder.Services.AddDbContext<Contexto> //Vinicius
+    (options => options.UseSqlServer("Data Source=SB-1490629\\SQLSENAI;Initial Catalog = ProjetoCardapio;Integrated Security = True;TrustServerCertificate = True"));*/
 
 /*builder.Services.AddDbContext<Contexto> //Kaique
     (options => options.UseSqlServer("Data Source=SB-1490626\\SQLSENAI;Initial Catalog = ProjetoCardapio;Integrated Security = True;TrustServerCertificate = True"));*/

@@ -57,3 +57,10 @@ body {
         margin: auto;
         margin-top: 20px;
     }
+.nav-item{
+    margin-right: 65px;
+    margin-left: 100px;
+    display: flex;
+    font-size: 22px;
+    color: white;
+}
