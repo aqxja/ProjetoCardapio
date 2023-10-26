@@ -15,5 +15,6 @@ namespace ProjetoCardapio.Models
         [Display(Name = "Nome dia")]
 
         public string NomeDia { get; set; } = string.Empty;
+
     }
 }
