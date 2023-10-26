@@ -14,5 +14,38 @@ html {
 }
 
 body {
-  margin-bottom: 60px;
+    margin-bottom: 60px;
+    background-color: #F9F9F9;
 }
+
+.navbar {
+    padding: 0 !important;
+    
+}
+.navbar-brand {
+    padding: 0 !important;
+    
+}
+.navbar-brand img {
+    height: 60px;
+}
+.container-fluid {
+    background-color: #ED1C24;
+}
+.text-center {
+    background-color: #F4F3F3;
+    margin-top: 60px;
+    height: 600px;
+    border-radius: 20px;
+}
+.text-center h1 {
+     display: block; 
+     font-size: 65px;
+     padding-top: 40px;
+}
+    .text-center a {
+        padding-top: 2px;
+        display: block;
+        font-size: 38px;
+
+    }
