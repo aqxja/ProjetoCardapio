@@ -35,17 +35,25 @@ body {
 .text-center {
     background-color: #F4F3F3;
     margin-top: 60px;
-    height: 600px;
-    border-radius: 20px;
+    height: 690px;
+    border-radius: 30px;
 }
 .text-center h1 {
      display: block; 
      font-size: 65px;
-     padding-top: 40px;
+     padding-top: 20px;
 }
     .text-center a {
         padding-top: 2px;
         display: block;
         font-size: 38px;
 
+    }
+    .text-center img {
+        height: 390px;
+        border-radius: 30px;
+        width: 660px;
+        display: flex;
+        margin: auto;
+        margin-top: 20px;
     }
