@@ -6,17 +6,17 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
-/*builder.Services.AddDbContext<Contexto>
-    (options => options.UseSqlServer("Data Source=SB-1490656\\SQLSENAI;Initial Catalog = ProjetoCardapio;Integrated Security = True;TrustServerCertificate = True"));*Aquiles/
+/*builder.Services.AddDbContext<Contexto> //Aquiles
+    (options => options.UseSqlServer("Data Source=SB-1490656\\SQLSENAI;Initial Catalog = ProjetoCardapio;Integrated Security = True;TrustServerCertificate = True"));*/
 
-builder.Services.AddDbContext<Contexto>
-    (options => options.UseSqlServer("Data Source=SB-1490629\\SQLSENAI;Initial Catalog = ProjetoCardapio;Integrated Security = True;TrustServerCertificate = True"));*Vinicius/
+/*builder.Services.AddDbContext<Contexto> //Vinicius
+    (options => options.UseSqlServer("Data Source=SB-1490629\\SQLSENAI;Initial Catalog = ProjetoCardapio;Integrated Security = True;TrustServerCertificate = True"));*/
 
-builder.Services.AddDbContext<Contexto>
-    (options => options.UseSqlServer("Data Source=SB-1490626\\SQLSENAI;Initial Catalog = ProjetoCardapio;Integrated Security = True;TrustServerCertificate = True"));*Kaique/
+/*builder.Services.AddDbContext<Contexto> //Kaique
+    (options => options.UseSqlServer("Data Source=SB-1490626\\SQLSENAI;Initial Catalog = ProjetoCardapio;Integrated Security = True;TrustServerCertificate = True"));*/
 
-builder.Services.AddDbContext<Contexto>
-    (options => options.UseSqlServer("Data Source=SB-1490652\\SQLSENAI;Initial Catalog = ProjetoCardapio;Integrated Security = True;TrustServerCertificate = True"));*Alue/
+/*builder.Services.AddDbContext<Contexto> //Alue
+    (options => options.UseSqlServer("Data Source=SB-1490652\\SQLSENAI;Initial Catalog = ProjetoCardapio;Integrated Security = True;TrustServerCertificate = True"));*/
 
 var app = builder.Build();
 
