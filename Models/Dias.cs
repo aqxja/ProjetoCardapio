@@ -5,5 +5,6 @@ namespace ProjetoCardapio.Models
     [Table("Dias")]
     public class Dias
     {
+        [Column]
     }
 }
