@@ -23,19 +23,19 @@ namespace ProjetoCardapio.Migrations
 
             modelBuilder.Entity("ProjetoCardapio.Models.Dias", b =>
                 {
-                    b.Property<int>("id")
+                    b.Property<int>("DiasId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
-                        .HasColumnName("DiaId");
+                        .HasColumnName("DiasId");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("DiasId"));
 
                     b.Property<string>("NomeDia")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)")
                         .HasColumnName("DiaNome");
 
-                    b.HasKey("id");
+                    b.HasKey("DiasId");
 
                     b.ToTable("Dias");
                 });
@@ -68,10 +68,7 @@ namespace ProjetoCardapio.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("DiaId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("Diasid")
+                    b.Property<int>("DiasId")
                         .HasColumnType("int");
 
                     b.Property<string>("LinkImagem")
@@ -82,13 +79,14 @@ namespace ProjetoCardapio.Migrations
                     b.Property<int>("PeriodoId")
                         .HasColumnType("int");
 
-                    b.Property<int>("PratoNome")
-                        .HasColumnType("int")
+                    b.Property<string>("PratoNome")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)")
                         .HasColumnName("PratoNome");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("Diasid");
+                    b.HasIndex("DiasId");
 
                     b.HasIndex("PeriodoId");
 
@@ -141,7 +139,7 @@ namespace ProjetoCardapio.Migrations
                 {
                     b.HasOne("ProjetoCardapio.Models.Dias", "Dias")
                         .WithMany()
-                        .HasForeignKey("Diasid")
+                        .HasForeignKey("DiasId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 

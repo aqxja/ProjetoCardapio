@@ -5,7 +5,7 @@
 namespace ProjetoCardapio.Migrations
 {
     /// <inheritdoc />
-    public partial class Criacao : Migration
+    public partial class ConfiguraçãoInicial : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -14,13 +14,13 @@ namespace ProjetoCardapio.Migrations
                 name: "Dias",
                 columns: table => new
                 {
-                    DiaId = table.Column<int>(type: "int", nullable: false)
+                    DiasId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     DiaNome = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Dias", x => x.DiaId);
+                    table.PrimaryKey("PK_Dias", x => x.DiasId);
                 });
 
             migrationBuilder.CreateTable(
@@ -56,19 +56,18 @@ namespace ProjetoCardapio.Migrations
                     PratoId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     PeriodoId = table.Column<int>(type: "int", nullable: false),
-                    DiaId = table.Column<int>(type: "int", nullable: false),
-                    Diasid = table.Column<int>(type: "int", nullable: false),
-                    PratoNome = table.Column<int>(type: "int", nullable: false),
+                    DiasId = table.Column<int>(type: "int", nullable: false),
+                    PratoNome = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     LinkImagem = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Pratos", x => x.PratoId);
                     table.ForeignKey(
-                        name: "FK_Pratos_Dias_Diasid",
-                        column: x => x.Diasid,
+                        name: "FK_Pratos_Dias_DiasId",
+                        column: x => x.DiasId,
                         principalTable: "Dias",
-                        principalColumn: "DiaId",
+                        principalColumn: "DiasId",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_Pratos_Periodo_PeriodoId",
@@ -99,9 +98,9 @@ namespace ProjetoCardapio.Migrations
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_Pratos_Diasid",
+                name: "IX_Pratos_DiasId",
                 table: "Pratos",
-                column: "Diasid");
+                column: "DiasId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Pratos_PeriodoId",

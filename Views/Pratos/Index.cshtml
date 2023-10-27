@@ -4,6 +4,8 @@
     ViewData["Title"] = "Index";
 }
 
+<h1>Index</h1>
+
 <p>
     <a asp-action="Create">Create New</a>
 </p>
@@ -14,7 +16,7 @@
                 @Html.DisplayNameFor(model => model.Periodo)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.DiaId)
+                @Html.DisplayNameFor(model => model.Dias)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.PratoNome)
@@ -32,7 +34,7 @@
                 @Html.DisplayFor(modelItem => item.Periodo.id)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.DiaId)
+                @Html.DisplayFor(modelItem => item.Dias.DiasId)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.PratoNome)

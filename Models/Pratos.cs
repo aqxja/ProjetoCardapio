@@ -16,16 +16,14 @@ namespace ProjetoCardapio.Models
 
         public Periodo Periodo { get; set; }
 
-        [ForeignKey("DiaId")]
-
-        public int DiaId { get; set; }
+        [ForeignKey("DiasId")]
+        public int DiasId { get; set; }
 
         public Dias Dias { get; set; }
 
         [Column("PratoNome")]
         [Display(Name = "Nome do Prato")]
-
-        public int PratoNome { get; set; }
+        public string PratoNome { get; set; } = string.Empty;
 
         [Column("LinkImagem")]
         [Display(Name = "Digite o Link da Imagem")]

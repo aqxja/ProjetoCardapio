@@ -21,7 +21,7 @@ namespace ProjetoCardapio.Controllers
         // GET: Pratos
         public async Task<IActionResult> Index()
         {
-            var contexto = _context.Pratos.Include(p => p.Periodo);
+            var contexto = _context.Pratos.Include(p => p.Dias).Include(p => p.Periodo);
             return View(await contexto.ToListAsync());
         }
 
@@ -34,6 +34,7 @@ namespace ProjetoCardapio.Controllers
             }
 
             var pratos = await _context.Pratos
+                .Include(p => p.Dias)
                 .Include(p => p.Periodo)
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (pratos == null)
@@ -47,6 +48,7 @@ namespace ProjetoCardapio.Controllers
         // GET: Pratos/Create
         public IActionResult Create()
         {
+            ViewData["DiasId"] = new SelectList(_context.Dias, "DiasId", "DiasId");
             ViewData["PeriodoId"] = new SelectList(_context.Periodo, "id", "id");
             return View();
         }
@@ -56,7 +58,7 @@ namespace ProjetoCardapio.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,PeriodoId,DiaId,PratoNome,LinkImagem")] Pratos pratos)
+        public async Task<IActionResult> Create([Bind("Id,PeriodoId,DiasId,PratoNome,LinkImagem")] Pratos pratos)
         {
             if (ModelState.IsValid)
             {
@@ -64,6 +66,7 @@ namespace ProjetoCardapio.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["DiasId"] = new SelectList(_context.Dias, "DiasId", "DiasId", pratos.DiasId);
             ViewData["PeriodoId"] = new SelectList(_context.Periodo, "id", "id", pratos.PeriodoId);
             return View(pratos);
         }
@@ -81,6 +84,7 @@ namespace ProjetoCardapio.Controllers
             {
                 return NotFound();
             }
+            ViewData["DiasId"] = new SelectList(_context.Dias, "DiasId", "DiasId", pratos.DiasId);
             ViewData["PeriodoId"] = new SelectList(_context.Periodo, "id", "id", pratos.PeriodoId);
             return View(pratos);
         }
@@ -90,7 +94,7 @@ namespace ProjetoCardapio.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,PeriodoId,DiaId,PratoNome,LinkImagem")] Pratos pratos)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,PeriodoId,DiasId,PratoNome,LinkImagem")] Pratos pratos)
         {
             if (id != pratos.Id)
             {
@@ -117,6 +121,7 @@ namespace ProjetoCardapio.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["DiasId"] = new SelectList(_context.Dias, "DiasId", "DiasId", pratos.DiasId);
             ViewData["PeriodoId"] = new SelectList(_context.Periodo, "id", "id", pratos.PeriodoId);
             return View(pratos);
         }
@@ -130,6 +135,7 @@ namespace ProjetoCardapio.Controllers
             }
 
             var pratos = await _context.Pratos
+                .Include(p => p.Dias)
                 .Include(p => p.Periodo)
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (pratos == null)
