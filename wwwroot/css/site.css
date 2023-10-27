@@ -64,3 +64,24 @@ body {
     font-size: 22px;
     color: white;
 }
+.tabela-escuro {
+    background-color: #EFEEEE;
+}
+.tabela-botoes {
+    background-color: #F5F5F5;
+    margin-top: 50px;
+}
+
+.spacing-botoes {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: space-between;
+}
+.spacing-botoes .item {
+    flex: 1;
+    display: block;
+    width: 2%;
+    text-align: center;
+}
