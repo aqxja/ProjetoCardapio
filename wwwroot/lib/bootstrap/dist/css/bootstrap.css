@@ -319,7 +319,6 @@ tr,
 td,
 th {
   border-color: inherit;
-  border-style: solid;
   border-width: 0;
 }
 
@@ -1970,7 +1969,7 @@ progress {
 .table > tbody {
   vertical-align: inherit;
 }
-.table > thead {
+.table >  {
   vertical-align: bottom;
 }
 .table > :not(:last-child) > :last-child > * {

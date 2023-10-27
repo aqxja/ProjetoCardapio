@@ -6,10 +6,10 @@ namespace ProjetoCardapio.Models
     [Table("Dias")]
     public class Dias
     {
-        [Column("DiaId")]
+        [Column("DiasId")]
         [Display(Name = "Id dia")]
 
-        public int id { get; set; }
+        public int DiasId { get; set; }
 
         [Column("DiaNome")]
         [Display(Name = "Nome dia")]

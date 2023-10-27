@@ -35,7 +35,7 @@ namespace ProjetoCardapio.Controllers
             }
 
             var dias = await _context.Dias
-                .FirstOrDefaultAsync(m => m.id == id);
+                .FirstOrDefaultAsync(m => m.DiasId == id);
             if (dias == null)
             {
                 return NotFound();
@@ -55,7 +55,7 @@ namespace ProjetoCardapio.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("id,NomeDia")] Dias dias)
+        public async Task<IActionResult> Create([Bind("DiasId,NomeDia")] Dias dias)
         {
             if (ModelState.IsValid)
             {
@@ -87,9 +87,9 @@ namespace ProjetoCardapio.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("id,NomeDia")] Dias dias)
+        public async Task<IActionResult> Edit(int id, [Bind("DiasId,NomeDia")] Dias dias)
         {
-            if (id != dias.id)
+            if (id != dias.DiasId)
             {
                 return NotFound();
             }
@@ -103,7 +103,7 @@ namespace ProjetoCardapio.Controllers
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!DiasExists(dias.id))
+                    if (!DiasExists(dias.DiasId))
                     {
                         return NotFound();
                     }
@@ -126,7 +126,7 @@ namespace ProjetoCardapio.Controllers
             }
 
             var dias = await _context.Dias
-                .FirstOrDefaultAsync(m => m.id == id);
+                .FirstOrDefaultAsync(m => m.DiasId == id);
             if (dias == null)
             {
                 return NotFound();
@@ -156,7 +156,7 @@ namespace ProjetoCardapio.Controllers
 
         private bool DiasExists(int id)
         {
-          return (_context.Dias?.Any(e => e.id == id)).GetValueOrDefault();
+          return (_context.Dias?.Any(e => e.DiasId == id)).GetValueOrDefault();
         }
     }
 }
