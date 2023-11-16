@@ -6,20 +6,20 @@
 
 
 <p>
-    <a asp-action="Create">Criar nova sala</a>
+    <a class="textomod text-black" asp-action="Create">Adicionar Nova Sala</a>
 </p>
 <table class="table">
     <thead>
         <tr>
-            <th>
+            <th style="border:none !important;">
                 @Html.DisplayNameFor(model => model.NomeSalas)
             </th>
-            <th></th>
+            <th style="border:none !important;"></th>
         </tr>
     </thead>
-    <tbody>
+    <tbody class="corpinho">
 @foreach (var item in Model) {
-        <tr class="tabela-escuro">
+            <tr style="background-color: #EFEEEE; font-size: 20px">
             <td>
                 @Html.DisplayFor(modelItem => item.NomeSalas)
             </td>
@@ -27,13 +27,13 @@
         <tr class="tabela-botoes">
             <td class="spacing-botoes">
                 <div class="item">
-                        <a asp-action="Edit" asp-route-id="@item.id" class="btn btn-primary">Edit</a>
+                        <a asp-action="Edit" asp-route-id="@item.id" class="btn btn-danger">Editar</a>
                 </div>
                 <div class="item">
-                        <a asp-action="Details" asp-route-id="@item.id" class="btn btn-primary">Details</a>
+                        <a asp-action="Details" asp-route-id="@item.id" class="btn btn-danger">Detalhes</a>
                 </div>
                     <div class="item">
-                        <a asp-action="Delete" asp-route-id="@item.id" class="btn btn-primary">Delete</a>
+                        <a asp-action="Delete" asp-route-id="@item.id" class="btn btn-danger">Deletar</a>
                 </div>
                 
             </td>

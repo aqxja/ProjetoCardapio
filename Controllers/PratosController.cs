@@ -48,8 +48,8 @@ namespace ProjetoCardapio.Controllers
         // GET: Pratos/Create
         public IActionResult Create()
         {
-            ViewData["DiasId"] = new SelectList(_context.Dias, "DiasId", "DiasId");
-            ViewData["PeriodoId"] = new SelectList(_context.Periodo, "id", "id");
+            ViewData["DiasId"] = new SelectList(_context.Dias, "DiasId", "NomeDia");
+            ViewData["PeriodoId"] = new SelectList(_context.Periodo, "id", "NomePeriodo");
             return View();
         }
 
@@ -66,8 +66,8 @@ namespace ProjetoCardapio.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["DiasId"] = new SelectList(_context.Dias, "DiasId", "DiasId", pratos.DiasId);
-            ViewData["PeriodoId"] = new SelectList(_context.Periodo, "id", "id", pratos.PeriodoId);
+            ViewData["DiasId"] = new SelectList(_context.Dias, "DiasId", "NomeDia", pratos.DiasId);
+            ViewData["PeriodoId"] = new SelectList(_context.Periodo, "id", "NomePeriodo", pratos.PeriodoId);
             return View(pratos);
         }
 
@@ -84,8 +84,8 @@ namespace ProjetoCardapio.Controllers
             {
                 return NotFound();
             }
-            ViewData["DiasId"] = new SelectList(_context.Dias, "DiasId", "DiasId", pratos.DiasId);
-            ViewData["PeriodoId"] = new SelectList(_context.Periodo, "id", "id", pratos.PeriodoId);
+            ViewData["DiasId"] = new SelectList(_context.Dias, "DiasId", "NomeDia", pratos.DiasId);
+            ViewData["PeriodoId"] = new SelectList(_context.Periodo, "id", "NomePeriodo", pratos.PeriodoId);
             return View(pratos);
         }
 
@@ -121,8 +121,8 @@ namespace ProjetoCardapio.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["DiasId"] = new SelectList(_context.Dias, "DiasId", "DiasId", pratos.DiasId);
-            ViewData["PeriodoId"] = new SelectList(_context.Periodo, "id", "id", pratos.PeriodoId);
+            ViewData["DiasId"] = new SelectList(_context.Dias, "DiasId", "NomeDia", pratos.DiasId);
+            ViewData["PeriodoId"] = new SelectList(_context.Periodo, "id", "NomePeriodo", pratos.PeriodoId);
             return View(pratos);
         }
 

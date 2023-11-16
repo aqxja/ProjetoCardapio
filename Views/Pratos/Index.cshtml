@@ -7,7 +7,7 @@
 <p>
     <a class="textomod text-black" asp-action="Create">Adicionar Novo Prato</a>
 </p>
-<table class="table">
+<table class="table" style="text-align:center;">
     <thead>
         <tr>
             <th style="border:none !important;">
@@ -25,27 +25,38 @@
         </tr>
     </thead>
     <tbody class="corpinho">
-@foreach (var item in Model) {
+    @foreach (var item in Model) {
             <tr style="background-color: #EFEEEE; font-size: 20px">
-                <td style="border:none !important;">
-                    @Html.DisplayFor(modelItem => item.Periodo.id)
+                <td class="modifica" style="border:none !important;">
+                    @Html.DisplayFor(modelItem => item.Periodo.NomePeriodo)
                 </td>
-                <td style="border:none !important;">
-                    @Html.DisplayFor(modelItem => item.Dias.DiasId)
+                <td class="modifica" style="border:none !important;">
+                    @Html.DisplayFor(modelItem => item.Dias.NomeDia)
                 </td>
-                <td style="border:none !important;">
+                <td class="modifica" style="border:none !important;">
                     @Html.DisplayFor(modelItem => item.PratoNome)
                 </td>
-                <td style="border:none !important;">
-                    @Html.DisplayFor(modelItem => item.LinkImagem)
+                <td style="border:none !important;">                    
+                    <img src="@item.LinkImagem" class="img-prato">
                 </td>
-                <div>
-
-                    <a asp-action="Edit" asp-route-id="@item.Id">Editar</a> 
-                    <a asp-action="Details" asp-route-id="@item.Id">Detalhes</a> 
-                    <a asp-action="Delete" asp-route-id="@item.Id">Deletar</a>
-
-                </div>
+            </tr>            
+            <tr class="refaz" style="text-align:center;">
+                <td class="">
+                    <div class="item">
+                        <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-danger">Editar</a>
+                    </div>    
+                </td>
+                <td></td>
+                <td>
+                    <div class="item">
+                        <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-danger">Detalhes</a>
+                    </div>
+                </td>
+                <td>
+                    <div class="item">
+                        <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger">Deletar</a>
+                    </div>
+                </td>
             </tr>
         }
     </tbody>

@@ -47,7 +47,7 @@ namespace ProjetoCardapio.Controllers
         // GET: Presencas/Create
         public IActionResult Create()
         {
-            ViewData["SalasId"] = new SelectList(_context.Salas, "id", "id");
+            ViewData["SalasId"] = new SelectList(_context.Salas, "id", "NomeSalas");
             return View();
         }
 
@@ -64,7 +64,7 @@ namespace ProjetoCardapio.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["SalasId"] = new SelectList(_context.Salas, "id", "id", presencas.SalasId);
+            ViewData["SalasId"] = new SelectList(_context.Salas, "id", "NomeSalas", presencas.SalasId);
             return View(presencas);
         }
 
@@ -81,7 +81,7 @@ namespace ProjetoCardapio.Controllers
             {
                 return NotFound();
             }
-            ViewData["SalasId"] = new SelectList(_context.Salas, "id", "id", presencas.SalasId);
+            ViewData["SalasId"] = new SelectList(_context.Salas, "id", "NomeSalas", presencas.SalasId);
             return View(presencas);
         }
 
@@ -117,7 +117,7 @@ namespace ProjetoCardapio.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["SalasId"] = new SelectList(_context.Salas, "id", "id", presencas.SalasId);
+            ViewData["SalasId"] = new SelectList(_context.Salas, "id", "NomeSalas", presencas.SalasId);
             return View(presencas);
         }
 

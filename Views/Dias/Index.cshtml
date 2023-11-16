@@ -4,32 +4,45 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a class="textomod text-black" asp-action="Create">Adicionar Nova Data</a>
 </p>
 <table class="table">
     <thead>
-        <tr>
-            <th>
+        <tr >
+            <th style="border:none !important;">
                 @Html.DisplayNameFor(model => model.NomeDia)
             </th>
-            <th></th>
+            <th style="border:none !important;"></th>
         </tr>
     </thead>
-    <tbody>
+    <tbody class="corpinho">
 @foreach (var item in Model) {
-        <tr>
+            <tr style="background-color: #EFEEEE; font-size: 20px">
             <td>
                 @Html.DisplayFor(modelItem => item.NomeDia)
             </td>
-            <td>
+            @*<td>
                 <a asp-action="Edit" asp-route-id="@item.DiasId">Edit</a> |
                 <a asp-action="Details" asp-route-id="@item.DiasId">Details</a> |
                 <a asp-action="Delete" asp-route-id="@item.DiasId">Delete</a>
-            </td>
+            </td>*@
         </tr>
+                <tr class="tabela-botoes">
+                <td class="spacing-botoes">
+                    <div class="item">
+                        <a asp-action="Edit" asp-route-id="@item.DiasId" class="btn btn-danger">Editar</a>
+                    </div>
+                    <div class="item">
+                            <a asp-action="Details" asp-route-id="@item.DiasId" class="btn btn-danger">Detalhes</a>
+                    </div>
+                        <div class="item">
+                        <a asp-action="Delete" asp-route-id="@item.DiasId" class="btn btn-danger">Deletar</a>
+                    </div>
+
+                </td>
+            </tr>
 }
     </tbody>
 </table>

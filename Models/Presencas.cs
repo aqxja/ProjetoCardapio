@@ -15,7 +15,7 @@ namespace ProjetoCardapio.Models
 
         public int SalasId { get;set; }
 
-        public Salas Salas { get; set;}
+        public Salas? Salas { get; set;}
 
 
         [Column("QuantidadeAlunos")]

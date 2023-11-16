@@ -109,3 +109,34 @@ tr td:last-child {
     width: 2%;
     text-align: center;
 }
+.img-prato{
+    height: 180px;
+    border-radius: 20px;
+}
+.modifica{
+    font-size: 26px;
+    padding-top: 6% !important;
+}
+.duplica {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    align-content: space-between;
+}
+.refaz {
+    background-color: #F5F5F5;
+    margin-top: 50px;
+}
+.duplica .item {
+    flex: 1;
+    display: block;
+    width: 2%;
+    text-align: center;
+}
+.item {
+    
+}
+.form-group{
+    margin-top: 10px}
